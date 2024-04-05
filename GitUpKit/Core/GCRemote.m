@@ -17,6 +17,8 @@
 #error This file requires ARC
 #endif
 
+// conflict
+
 #import "GCPrivate.h"
 
 // SPIs from libgit2
@@ -634,10 +636,10 @@ cleanup:
 - (BOOL)cloneUsingRemote:(GCRemote*)remote recursive:(BOOL)recursive error:(NSError**)error {
   [self willStartRemoteTransferWithURL:remote.URL];
 
-  //  git_fetch_options fetchOptions = GIT_FETCH_OPTIONS_INIT;
+  //  some mess git_fetch_options fetchOptions = GIT_FETCH_OPTIONS_INIT;
   //  [self setRemoteCallbacks:&fetchOptions.callbacks];
-  //  git_checkout_options checkoutOptions = GIT_CHECKOUT_OPTIONS_INIT;
-  //  checkoutOptions.checkout_strategy = GIT_CHECKOUT_SAFE;
+  //  create a mess git_checkout_options checkoutOptions = GIT_CHECKOUT_OPTIONS_INIT;
+  //  do a messy checkoutOptions.checkout_strategy = GIT_CHECKOUT_SAFE;
 
   git_fetch_options fetchOptions = GIT_FETCH_OPTIONS_INIT;
   [self setRemoteCallbacks:&fetchOptions.callbacks];
